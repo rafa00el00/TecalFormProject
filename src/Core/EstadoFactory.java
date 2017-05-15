@@ -1,14 +1,14 @@
 package Core;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 
 import Model.Estado;
 
 public class EstadoFactory {
 
 	public Estado criar(){
-		HashMap<String, Estado> estados;
-		estados = new HashMap<String,Estado>();
+		EnumMap<String, Estado> estados;
+		estados = new EnumMap<String,Estado>();
 		
 		Estado estado;
 		for(int i =0; i <= 29;i++)
@@ -17,7 +17,7 @@ public class EstadoFactory {
 			estados.put("q"+i,estado);
 		}
 		
-		HashMap<Estado.TERMINAIS, Estado> futuros;
+		EnumMap<Estado.TERMINAIS, Estado> futuros;
 		for(int i = 0; i<=7;i++)
 		{
 			futuros = estados.get("q"+i).getEstadosFuturos();

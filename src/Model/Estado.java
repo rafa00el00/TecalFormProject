@@ -1,6 +1,6 @@
 package Model;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 
 public class Estado {
 
@@ -23,17 +23,17 @@ public class Estado {
 	}
 
 	private String nome;
-	private HashMap<TERMINAIS, Estado> estadosFuturos;
+	private EnumMap<TERMINAIS, Estado> estadosFuturos;
 	
 	public Estado() {
-		this("",new HashMap<>());
+		this("",new EnumMap<>());
 	}
 	
 	public Estado(String nome) {
-		this(nome,new HashMap<>());
+		this(nome,new EnumMap<>());
 	}
 
-	public Estado(String nome, HashMap<TERMINAIS, Estado> estadosFuturos) {
+	public Estado(String nome, EnumMap<TERMINAIS, Estado> estadosFuturos) {
 		super();
 		this.nome = nome;
 		this.estadosFuturos = estadosFuturos;
@@ -45,10 +45,10 @@ public class Estado {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public HashMap<TERMINAIS, Estado> getEstadosFuturos() {
+	public EnumMap<TERMINAIS, Estado> getEstadosFuturos() {
 		return estadosFuturos;
 	}
-	public void setEstadosFuturos(HashMap<TERMINAIS, Estado> estadosFuturos) {
+	public void setEstadosFuturos(EnumMap<TERMINAIS, Estado> estadosFuturos) {
 		this.estadosFuturos = estadosFuturos;
 	}
 	
