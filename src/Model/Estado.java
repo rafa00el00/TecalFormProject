@@ -26,11 +26,11 @@ public class Estado {
 	private EnumMap<TERMINAIS, Estado> estadosFuturos;
 	
 	public Estado() {
-		this("",new EnumMap<>());
+		this("",new EnumMap<>(TERMINAIS.class));
 	}
 	
 	public Estado(String nome) {
-		this(nome,new EnumMap<>());
+		this(nome,new EnumMap<>(TERMINAIS.class));
 	}
 
 	public Estado(String nome, EnumMap<TERMINAIS, Estado> estadosFuturos) {

@@ -1,14 +1,15 @@
 package Core;
 
 import java.util.EnumMap;
+import java.util.HashMap;
 
 import Model.Estado;
 
 public class EstadoFactory {
 
 	public Estado criar(){
-		EnumMap<String, Estado> estados;
-		estados = new EnumMap<String,Estado>();
+		HashMap<String, Estado> estados;
+		estados = new HashMap<String,Estado>();
 		
 		Estado estado;
 		for(int i =0; i <= 29;i++)
