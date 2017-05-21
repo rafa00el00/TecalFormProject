@@ -10,7 +10,8 @@ public class Estado {
 		R5("R$5,00"),
 		BG("Bala de Goma"),
 		BL("Bolacha"),
-		CH("Chocolate");
+		CH("Chocolate"),
+		Iniciar("Iniciar");
 		private String value;
 		TERMINAIS(String value){
 			this.value = value;
@@ -24,19 +25,24 @@ public class Estado {
 
 	private String nome;
 	private EnumMap<TERMINAIS, Estado> estadosFuturos;
+	private String descricao;
 	
 	public Estado() {
-		this("",new EnumMap<>(TERMINAIS.class));
+		this("",new EnumMap<>(TERMINAIS.class),"");
 	}
 	
 	public Estado(String nome) {
-		this(nome,new EnumMap<>(TERMINAIS.class));
+		this(nome,new EnumMap<>(TERMINAIS.class),"");
+	}
+	public Estado(String nome, String descricao) {
+		this(nome,new EnumMap<>(TERMINAIS.class),descricao);
 	}
 
-	public Estado(String nome, EnumMap<TERMINAIS, Estado> estadosFuturos) {
+	public Estado(String nome, EnumMap<TERMINAIS, Estado> estadosFuturos, String descricao) {
 		super();
 		this.nome = nome;
 		this.estadosFuturos = estadosFuturos;
+		this.descricao = descricao;
 	}
 	
 	public String getNome() {
@@ -51,5 +57,15 @@ public class Estado {
 	public void setEstadosFuturos(EnumMap<TERMINAIS, Estado> estadosFuturos) {
 		this.estadosFuturos = estadosFuturos;
 	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
+	
 	
 }

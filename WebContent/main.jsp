@@ -9,9 +9,9 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body >
-
-<c:forEach var="opcao" items="${ opcoes }">
-	<a href="?valorSelecionado=${ opcao.key }">${ opcao.key.value }</a>
+<h1>${ estado.descricao }</h1>
+<c:forEach var="opcao" items="${ estado.estadosFuturos }">
+	<a href="?valorSelecionado=${ opcao.key }" class="btn btn-primary">${ opcao.key.value }</a>
 </c:forEach>
 
 	<script type="text/javascript" scr="js/npm.js"></script>
