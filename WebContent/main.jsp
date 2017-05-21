@@ -6,14 +6,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Projeto Arqdsis</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body >
-<h1>${ estado.descricao }</h1>
+<div class="panel col-md-4 col-md-offset-4">
+<h1 class="panel panel-heading">
+<c:if test="${ estado.descricao eq '' }">
+	Maquina de Doces:
+</c:if>
+${ estado.descricao }
+</h1>
+<div class="panel panel-body">
+
 <c:forEach var="opcao" items="${ estado.estadosFuturos }">
-	<a href="?valorSelecionado=${ opcao.key }" class="btn btn-primary">${ opcao.key.value }</a>
+	<a href="?valorSelecionado=${ opcao.key }" class="btn btn-primary col-md-4">${ opcao.key.value }</a>
 </c:forEach>
 
+</div>
+</div>
 	<script type="text/javascript" scr="js/npm.js"></script>
 	<script type="text/javascript" scr="js/bootstrap.min.js"></script>
 </body>
